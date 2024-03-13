@@ -8,10 +8,6 @@ Syntax highlighting for Daedalus - the scripting language in ZenGin (Gothic I, G
 
 ## Usage
 
-Explain how to install and use your grammar.
-
-Include the Highlight.js library in your webpage or Node app, then load this module.
-
 ### Static website
 
 Load the module after loading Highlight.js.  Use the minified version found in the `dist` directory.  This module is just a CDN build of the language, so it will register itself as the JavaScript is loaded.
@@ -34,6 +30,14 @@ Load the module after loading Highlight.js.  Use the minified version found in t
 - More info: <https://unpkg.com>
 
 ### With Node or another build system
+
+```bash
+# For npm users
+npm install --save highlightjs-daedalus
+
+# For yarn users
+yarn add highlightjs-daedalus
+```
 
 If you're using Node / Webpack / Rollup / Browserify, etc., require the language module, then register it with Highlight.js.
 
