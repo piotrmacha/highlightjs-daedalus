@@ -1,0 +1,4 @@
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Bjorn</span> {
+    <span class="hljs-keyword">var</span> <span class="hljs-keyword">int</span> <span class="hljs-variable">id</span>;
+    <span class="hljs-keyword">var</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">name</span>;
+};

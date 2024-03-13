@@ -1,33 +1,67 @@
-# highlightjs-language-template
+# highlightjs-daedalus
 
-This repository is a new language [template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#about-repository-templates) to use as a starting point when creating a language definition for [highlightjs](https://github.com/highlightjs/highlight.js). See https://highlightjs.org/ for more information about highlight.js.
+Syntax highlighting for Daedalus - the scripting language in ZenGin (Gothic I, Gothic II).
 
-**Before you start:**
+**Built with**:
 
-1. Check [supported languages](https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md) to see if your proposed language/syntax/grammar is already supported. If there is an existing implementation, it may be more helpful to contribute to the existing repository.
-2. Read [3rd party quick start](https://github.com/highlightjs/highlight.js/blob/master/extra/3RD_PARTY_QUICK_START.md) to learn more about the requirements and process to contributing a new syntax.
+* [highlightjs](https://github.com/highlightjs/highlight.js)
 
 ## Usage
 
-This is a GitHub repository _template_ for defining a new language for use with [highlightjs](https://highlightjs.org/). It is designed to be the starting point for creating a new repository to define a new language syntax contribution. Follow [Language definition guide](https://highlightjs.readthedocs.io/en/latest/language-guide.html) to learn how to define a new language.
+Explain how to install and use your grammar.
 
-**Steps:**
+Include the Highlight.js library in your webpage or Node app, then load this module.
 
-1. Create a new repository from this template.
-2. Update `package.json`.
-3. Install the dependencies with `npm install`.
-4. Rename `src/languages/your-language.js` to your language/syntax/grammar name. Search and replace in this repository all occurrences of `your-language` with your language name, including file and folder names. Follow the [Language definition guide](https://highlightjs.readthedocs.io/en/latest/language-guide.html) to learn how to implement it. Typically we start with an existing grammar that is close and alter that JavaScript code to parse your new grammar.
-5. We provided a simple test framework to help you get started quickly. You can use this and update it to help test your grammar, or remove it and replace it with your preferred testing framework. Rename and update the unit test `spec/language-spec.js` to test your new syntax. Edit `test/markup/your-language/sample.txt` to cover specific test cases for your syntax. The code doesn't have to be real working code, but it does have to fully test your grammar constructs and keywords. Edit `test/markup/your-language/sample.expect.txt` to hold the anticipated correct highlighting HTML. Edit `test/detect/your-language/sample.txt` to include a validation case for auto-detecting your language. Also change the folder path from `your-language` to the matching name for your language.
-6. Run the test with `npm test`.
-7. Delete `README.md` and then rename `BLANK_README.md` to `README.md`. Complete the placeholder sections to explain how to use your grammar. You can use [sample README](https://github.com/highlightjs/highlightjs-robots-txt/blob/master/README.md) as a guide.
-8. As a final step, follow the testing procedure in [3RD_PARTY_QUICK_START](https://github.com/highlightjs/highlight.js/blob/main/extra/3RD_PARTY_QUICK_START.md) to test your language against the highlight.js test and detect framework.
+### Static website
 
-Once your syntax is working as expected and your README is complete, create a [syntax request](https://github.com/highlightjs/highlight.js/issues/new/choose) issue and indicate the details about your new grammar for the maintainers to review.
+Load the module after loading Highlight.js.  Use the minified version found in the `dist` directory.  This module is just a CDN build of the language, so it will register itself as the JavaScript is loaded.
+
+```html
+<script type="text/javascript" src="/path/to/highlight.min.js"></script>
+<script type="text/javascript" src="/path/to/daedalus.min.js"></script>
+<script type="text/javascript">
+  hljs.highlightAll();
+</script>
+```
+
+### Using directly from the UNPKG CDN
+
+```html
+<script type="text/javascript"
+  src="https://unpkg.com/highlightjs-daedalus@0.0.1/dist/daedalus.min.js"></script>
+```
+
+- More info: <https://unpkg.com>
+
+### With Node or another build system
+
+If you're using Node / Webpack / Rollup / Browserify, etc., require the language module, then register it with Highlight.js.
+
+```javascript
+var hljs = require('highlight.js');
+var hljsYourLanguage = require('highlightjs-daedalus');
+
+hljs.registerLanguage("daedalus", hljsYourLanguage);
+hljs.highlightAll();
+```
 
 ## License
 
-Highlight.js and this template are released under the BSD 3-CLause License. See [LICENSE](LICENSE) file for details. You may choose a different license based on your requirements.
+Distributed under the [MIT](./LICENSE). See `LICENSE` for more information.
+
+Highlight.js is released under the [BSD 3-Clause License](https://github.com/highlightjs/highlight.js/blob/master/LICENSE).
 
 ## Contributing
 
-This is open source software, all contributions are welcome.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork this project.
+2. Create a work branch (`git checkout -b my-branch`).
+3. Commit your changes (`git commit -m 'my changes'`).
+4. Push the branch (`git push origin my-branch`).
+5. Open a Pull Request from your fork back to this repository.
+
+## Links
+
+- The official site for the Highlight.js library is <https://highlightjs.org/>.
+- The Highlight.js GitHub project: <https://github.com/highlightjs/highlight.js>

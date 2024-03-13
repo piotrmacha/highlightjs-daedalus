@@ -1,0 +1,4 @@
+class Bjorn {
+    var int id;
+    var string name;
+};

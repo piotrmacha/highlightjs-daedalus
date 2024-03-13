@@ -1,0 +1,6 @@
+func string MyFunction(
+    var int abc, 
+    var string text
+) {
+    return text;
+};

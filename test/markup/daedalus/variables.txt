@@ -1,0 +1,7 @@
+const int decimal = 42;
+const int float = 21.37;
+const string str = "string";
+
+var C_NPC player;
+
+

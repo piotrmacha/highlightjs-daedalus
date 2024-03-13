@@ -1,21 +1,22 @@
 {
-  "name": "highlightjs-your-language",
-  "version": "0.1.0",
-  "author": "John Foster",
+  "name": "highlightjs-daedalus",
+  "version": "0.0.1",
+  "author": "Piotr Macha",
   "description": "A new language template set up when creating a language definition for highlightjs",
-  "main": "src/languages/your-language.js",
+  "main": "src/languages/daedalus.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "mocha --reporter spec",
+    "mocha": "mocha test/markup"
   },
   "files": [
-    "src/languages/your-language.js"
+    "src/languages/daedalus.js"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jf990/highlightjs-language-template.git"
+    "url": "https://github.com/piotrmacha/highlightjs-daedalus.git"
   },
   "keywords": [
-    "your-language",
+    "daedalus",
     "javascript",
     "highlight",
     "highlight.js",
@@ -25,11 +26,16 @@
   ],
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/jf990/highlightjs-language-template/issues"
+    "url": "https://github.com/piotrmacha/highlightjs-daedalus/issues"
   },
-  "homepage": "https://github.com/jf990/highlightjs-language-template",
+  "homepage": "https://github.com/piotrmacha/highlightjs-daedalus",
   "devDependencies": {
-    "highlight.js": "^10.7.1",
-    "jasmine": "^3.7.0"
+    "minimist": "^1.2.8",
+    "mocha": "^10.3.0",
+    "prettier": "3.2.5",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "highlight.js": "^11.9.0"
   }
 }
